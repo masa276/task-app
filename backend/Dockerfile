@@ -10,5 +10,5 @@ COPY ./app ./app
 
 EXPOSE 10000
 
-# Renderは環境変数を自動で読み込む
+# UvicornでFastAPIを起動
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "10000"]
