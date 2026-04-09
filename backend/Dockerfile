@@ -1,4 +1,4 @@
-# Python 3.11ベース
+# Python 3.11
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app ./app
 
-# ポート指定 Render推奨: 10000
 EXPOSE 10000
 
+# Renderは環境変数を自動で読み込む
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "10000"]
