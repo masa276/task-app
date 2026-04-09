@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 
-import "./index.css"; // TailwindCSS やスタイルの読み込み
+import "./index.css"; // ここで index.css を読み込む
 
 const App = () => {
   return (
