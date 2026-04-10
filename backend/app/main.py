@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.db.base import Base
+from app.db.session import engine
 
 # ルーターをインポート
 from app.api.routes import auth, tasks
@@ -32,3 +34,7 @@ app.include_router(tasks.router, prefix="/tasks", tags=["tasks"])
 @app.get("/")
 def root():
     return {"message": "Task Management API is running"}
+
+@app.on_event("startup")
+def startup():
+    Base.metadata.create_all(bind=engine)
