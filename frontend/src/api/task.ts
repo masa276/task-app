@@ -1,6 +1,6 @@
 import client from "./client";
 
-// タスク取得
+// タスク一覧取得
 export const getTasks = async () => {
   const res = await client.get("/tasks");
   return res.data;
@@ -12,7 +12,7 @@ export const createTask = async (data: { title: string; description?: string }) 
   return res.data;
 };
 
-// ✅ タスク削除
+// タスク削除
 export const deleteTask = async (id: number) => {
   const res = await client.delete(`/tasks/${id}`);
   return res.data;
