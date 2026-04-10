@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # ルーターをインポート
 from app.api.routes import auth, tasks
-
+from app.models import user, task
 app = FastAPI(
     title="Task Management App",
     description="A simple task management app with FastAPI and React",
