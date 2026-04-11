@@ -1,13 +1,17 @@
 from pydantic import BaseModel
+from typing import Optional
+
 
 class TaskCreate(BaseModel):
     title: str
-    description: str | None = None
+    description: Optional[str] = None
 
-class TaskResponse(BaseModel):
+
+class Task(BaseModel):
     id: int
     title: str
-    description: str | None
+    description: Optional[str] = None
+    user_id: int
 
     class Config:
         from_attributes = True
