@@ -14,3 +14,4 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine
 )
+print("DATABASE_URL =", DATABASE_URL)
