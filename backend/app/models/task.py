@@ -11,7 +11,7 @@ class Task(Base):
     description = Column(String, nullable=True)
 
     # 外部キー
-    user_id = Column(Integer)
+    user_id = Column(Integer, default=1)
 
     # ⭐重要：文字列で参照（import禁止）
     #user = relationship("User", back_populates="tasks")
