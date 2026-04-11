@@ -14,4 +14,4 @@ class Task(Base):
     user_id = Column(Integer)
 
     # ⭐重要：文字列で参照（import禁止）
-    user = relationship("User", back_populates="tasks")
+    #user = relationship("User", back_populates="tasks")
